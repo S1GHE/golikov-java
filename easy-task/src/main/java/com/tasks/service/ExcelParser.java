@@ -44,9 +44,9 @@ public class ExcelParser {
                 String phone = getCellValue(row.getCell(2));
                 String address = getCellValue(row.getCell(3));
 
-                String iban = getCellValue(row.getCell(4));
-                String bic = getCellValue(row.getCell(5));
-                String accountHolder = getCellValue(row.getCell(6));
+                String iban = getCellValue(row.getCell(13));
+                String bic = getCellValue(row.getCell(14));
+                String accountHolder = getCellValue(row.getCell(15));
                 BankAccount bankAccount = new BankAccount(iban, bic, accountHolder);
 
                 Employee employee = null;
@@ -55,15 +55,15 @@ public class ExcelParser {
                 boolean isCompany = !getCellValue(row.getCell(10)).isEmpty() && getCellValue(row.getCell(11)).matches("SARL|SARS");
 
                 if (isIndividual) {
-                    String firstName = getCellValue(row.getCell(7));
-                    String lastName = getCellValue(row.getCell(8));
-                    boolean hasChildren = Boolean.parseBoolean(getCellValue(row.getCell(9)));
+                    String firstName = getCellValue(row.getCell(5));
+                    String lastName = getCellValue(row.getCell(6));
+                    boolean hasChildren = Boolean.parseBoolean(getCellValue(row.getCell(7)));
 
                     int age;
                     try {
                         age = (int) Double.parseDouble(getCellValue(row.getCell(8)).trim());
                     } catch (NumberFormatException e) {
-                        System.out.println("Ошибка: значение возраста не является числом. Значение: '" + getCellValue(row.getCell(10)) + "'");
+                        System.out.println("Ошибка: значение возраста не является числом. Значение: '" + getCellValue(row.getCell(8)) + "'");
                         continue;
                     }
 
@@ -94,7 +94,6 @@ public class ExcelParser {
         return employees;
     }
 
-    // Вспомогательный метод для извлечения значения ячейки
     private String getCellValue(Cell cell) {
         switch (cell.getCellType()) {
             case STRING:
