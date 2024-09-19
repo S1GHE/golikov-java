@@ -1,5 +1,4 @@
-package main.java.com.enums;
-
+package com.tasks.enums;
 public enum CompanyType {
     SARS,
     SARL,

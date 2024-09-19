@@ -1,6 +1,6 @@
-package main.java.com.model;
+package com.tasks.model;
 
-import main.java.com.enums.CompanyType;
+import com.tasks.enums.CompanyType;
 
 public class Company extends Employee{
     private String name;

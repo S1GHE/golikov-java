@@ -1,4 +1,4 @@
-package main.java.com.model;
+package com.tasks.model;
 
 public class BankAccount {
     private String iban;

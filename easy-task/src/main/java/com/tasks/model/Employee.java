@@ -1,4 +1,5 @@
-package main.java.com.model;
+package com.tasks.model;
+
 
 public class Employee {
     private long id;

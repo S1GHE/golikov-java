@@ -1,4 +1,4 @@
-package main.java.com.model;
+package com.tasks.model;
 
 public class Individual extends Employee {
     private String firstName;
